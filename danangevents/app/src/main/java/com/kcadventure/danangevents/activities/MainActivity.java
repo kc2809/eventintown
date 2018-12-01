@@ -68,30 +68,30 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.main_menu, menu);
-    ((SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search)))
-        .setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-          @Override
-          public boolean onQueryTextSubmit(String query) {
-            return false;
-          }
-
-          @Override
-          public boolean onQueryTextChange(String newText) {
-//            search(newText);
-            Log.e(TAG, newText);
-
-            return true;
-          }
-        });
+//    ((SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search)))
+//        .setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//          @Override
+//          public boolean onQueryTextSubmit(String query) {
+//            return false;
+//          }
+//
+//          @Override
+//          public boolean onQueryTextChange(String newText) {
+////            search(newText);
+//            Log.e(TAG, newText);
+//
+//            return true;
+//          }
+//        });
     return super.onCreateOptionsMenu(menu);
   }
 
   @Override
   public boolean onMenuItemClick(MenuItem item) {
-    if (item.getItemId() == R.id.action_change_style) {
-//      changeStyle();
-      Log.e(TAG, "change statle");
-    }
+//    if (item.getItemId() == R.id.action_change_style) {
+////      changeStyle();
+//      Log.e(TAG, "change statle");
+//    }
     return false;
   }
 }

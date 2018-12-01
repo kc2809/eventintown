@@ -10,7 +10,7 @@
     android:id="@+id/category"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textColor="@color/color_white"
+    android:textColor="@color/color_black"
     android:textStyle="bold"
     android:textSize="15dp"
     android:textAllCaps="true"

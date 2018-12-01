@@ -18,6 +18,10 @@ import com.bumptech.glide.RequestManager;
 import com.kcadventure.danangevents.R;
 import com.kcadventure.danangevents.activities.ScrollingDetailActivity;
 import com.kcadventure.danangevents.models.Event;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder> {
@@ -75,7 +79,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
     // - replace the contents of the view with that element
     holder.eventTitle.setText(events.get(position).getEvent_name());
     holder.eventPlace.setText(events.get(position).getLocation());
-    holder.eventTime.setText(events.get(position).getStart_time());
+    holder.eventTime.setText(LocalDate.now().withDayOfMonth(position + 1).format(DateTimeFormatter.ofPattern("MMMM dd")));
 
     // set background
 //    holder.eventBackground.setBackgroundResource(R.drawable.bg);
