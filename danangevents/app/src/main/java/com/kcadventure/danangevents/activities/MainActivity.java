@@ -1,6 +1,7 @@
-package com.kcadventure.danangevents;
+package com.kcadventure.danangevents.activities;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,26 +12,50 @@ import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.kcadventure.danangevents.R;
+import com.kcadventure.danangevents.adapters.TabAdapter;
+import com.kcadventure.danangevents.fragments.EventInTownFragment;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnMenuItemClickListener {
 
   private static final String TAG = "MAIN ACTIVITY";
-  private Toolbar mToolbar;
-  private TabLayout mTabLayout;
-  private ViewPager mViewPager;
+  private Toolbar toolbar;
+  private TabLayout tabLayout;
+  private ViewPager viewPager;
+  private TabAdapter tabAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     setupToolbar();
+    initLayout();
+  }
+
+  private void initLayout() {
+    viewPager = findViewById(R.id.viewpager);
+    tabLayout = findViewById(R.id.tab_layout);
+    initTablayout();
+  }
+
+  private void initTablayout() {
+    List<Fragment> tabs = new ArrayList<>();
+    tabs.add(new EventInTownFragment());
+    tabs.add(new EventInTownFragment());
+    tabs.add(new EventInTownFragment());
+    tabAdapter = new TabAdapter(getSupportFragmentManager(), tabs, Arrays.asList("Event in Town", "My Event", "Map"));
+    viewPager.setAdapter(tabAdapter);
+    tabLayout.setupWithViewPager(viewPager);
   }
 
   private void setupToolbar() {
-    mToolbar = findViewById(R.id.tb_top);
-    setSupportActionBar(mToolbar);
+    toolbar = findViewById(R.id.tb_top);
+    setSupportActionBar(toolbar);
     getSupportActionBar().setTitle("");
-    mToolbar.setOnMenuItemClickListener(this);
+    toolbar.setOnMenuItemClickListener(this);
   }
 
   @Override
