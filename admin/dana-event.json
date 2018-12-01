@@ -43,20 +43,11 @@
       "lat": 0.634,
       "lon": 0.634,
       "user": [
-        {
-          "user_id": 1,
-          "status": "attending"
-        },
-        {
-          "user_id": 2,
-          "status": "attending"
-        }
+        {          "user_id": 1,          "status": "attending"        },
+        {          "user_id": 2,          "status": "attending"        }
       ],
       "comment": [
-        {
-          "user_id": 1,
-          "comment": "Event nay se rat thu vi"
-        }
+        {          "user_id": 1,        "comment": "Event nay se rat thu vi"        }
       ]
     }
   ],

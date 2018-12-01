@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var uniqueId;
     const config = {
         apiKey: "AIzaSyD4anhA5e7OK-ytLJbMjyXnudTsqRtGeHE",
         authDomain: "dana-event.firebaseapp.com",
@@ -7,6 +8,7 @@ $(document).ready(function () {
         storageBucket: "dana-event.appspot.com",
         messagingSenderId: "219297288084"
     };
+
     firebase.initializeApp(config);
     var database = firebase.database();
 
@@ -20,7 +22,9 @@ $(document).ready(function () {
             html += body_tab(element);
         });
         $( "#tbody" ).empty();
-        $("#tbody").append(html);
+        $("#tbody").append(html);        
+        uniqueId = snap.numChildren();
+        console.log(snap.val());
     });
 
     const body_tab = (data) => {
@@ -48,6 +52,10 @@ $(document).ready(function () {
             '\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t</tr>';
     }
+
+
+
+
 });
 
 
