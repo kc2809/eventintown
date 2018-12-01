@@ -15,11 +15,12 @@ $(document).ready(function () {
 
     eventRefObject.on("value", snap => {
         uniqueId = snap.numChildren();
+        console.log(snap.val());
     });    
    
     eventRefObject.on("child_changed", function(data) {
         console.log(data);        
-    });        
+    });
 
     function insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, startTime, user) {
         database.ref('event/' + eventId).set({
@@ -38,35 +39,37 @@ $(document).ready(function () {
             start_time : startTime,
             user : user,                 
         });
+        window.location.href = "event.html";
     }
 
+
+
+
+
     $("#btnSubmit").click(function () {
-    
-        var eventId = uniqueId + 1;
-        var eventName = $("#eventName").val();
-        var attendingCount = parseInt($("#attendingCount").val());
-        var categoryId = parseInt($("#category").val());
-        var cost = parseInt($("#cost").val());
-        var description = $("#description").val();
-        var endTime = $("#endTime").val();
-        var user = [ 
+        const eventId = uniqueId + 1;
+        const eventName = $("#eventName").val();
+        const attendingCount = parseInt($("#attendingCount").val());
+        const categoryId = parseInt($("#category").val());
+        const cost = parseInt($("#cost").val());
+        const description = $("#description").val();
+        const endTime = $("#endTime").val();
+        if (!eventId || !eventName || !attendingCount || !attendingCount || !categoryId) {
+            alert("All of field is requirement");
+        }
+        const user = [
             { "user_id" : 1, "status": "attending" },
             { "user_id" : 2, "status": "attending" }
         ];
-        var comment = [ 
+        const comment = [
             { "user_id" : 1, "comment": "hấp dẫn" },
             { "user_id" : 2, "status": "thú vị" }
         ];
-        var location = $("#location").val();
-        var startTime = $("#startTime").val();
+        const location = $("#location").val();
+        const startTime = $("#startTime").val();
 
         insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, startTime, user);
     });
-
-
-
-    
-
 });
 
 

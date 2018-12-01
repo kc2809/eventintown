@@ -22,9 +22,8 @@ $(document).ready(function () {
             html += body_tab(element);
         });
         $( "#tbody" ).empty();
-        $("#tbody").append(html);        
+        $("#tbody").append(html);
         uniqueId = snap.numChildren();
-        console.log(snap.val());
     });
 
     const body_tab = (data) => {
@@ -35,25 +34,12 @@ $(document).ready(function () {
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.event_name+'</td>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.location+'</td>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.attending_count+'</td>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.cost+'</td>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.start_time+'</td>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.end_time+'</td>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span data-toggle="2" class="badge  label-danger">blocked</span>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href="javascript:void(0)"\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t   class="btn btn-info btn-xs bg-light-blue user-edit"\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t   data-url="edit/2"><i class="fa fa-pencil"></i> Edit\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href="javascript:void(0)"\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t   class="btn btn-danger btn-xs user-delete" id="2"><i\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tclass="fa fa-lock"></i>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tUnblock </a>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n' +
+           
             '\t\t\t\t\t\t\t\t\t\t\t\t</tr>';
     }
-
-
 
 
 });
