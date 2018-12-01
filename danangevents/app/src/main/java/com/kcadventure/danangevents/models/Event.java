@@ -17,9 +17,15 @@ public class Event {
     private List<User_Event> users;
     private List<Comment> comments;
     private String image;
+    private String location;
 
     public Event() {
 
+    }
+
+    public Event(int event_id, String event_name) {
+        this.event_id = event_id;
+        this.event_name = event_name;
     }
 
     public Event(int event_id, String event_name, int attending_count, int category_id,
@@ -157,5 +163,13 @@ public class Event {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

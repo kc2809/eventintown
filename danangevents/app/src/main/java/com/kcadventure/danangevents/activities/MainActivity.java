@@ -24,12 +24,9 @@ import com.kcadventure.danangevents.adapters.TabAdapter;
 import com.kcadventure.danangevents.fragments.EventInTownFragment;
 import com.kcadventure.danangevents.fragments.MapViewFragment;
 import com.kcadventure.danangevents.models.Event;
-import com.kcadventure.danangevents.models.User;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.function.Consumer;
 
 public class MainActivity extends AppCompatActivity implements OnMenuItemClickListener {
 
@@ -38,9 +35,7 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
   private TabLayout tabLayout;
   private ViewPager viewPager;
   private TabAdapter tabAdapter;
-  private DatabaseReference mDatabase;
 
-  List<Event> events = new ArrayList<>();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -50,45 +45,8 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
     initLayout();
 
     // Overview get data from firebase
-    mDatabase = FirebaseDatabase.getInstance().getReference();
-    mDatabase.addValueEventListener(new ValueEventListener() {
-      @Override
-      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//        Log.e(TAG, dataSnapshot.child("event").);
-
-        Log.e(TAG, dataSnapshot.getValue().toString());
-        Log.e(TAG, dataSnapshot.getChildrenCount()+"");
-        Log.e(TAG, dataSnapshot.child("event").getValue().toString());
-
-        addDataChange(dataSnapshot.child("event").getChildren());
-//        addDataChange(dataSnapshot.getChildren());
-      }
-
-      @Override
-      public void onCancelled(@NonNull DatabaseError databaseError) {
-
-      }
-    });
   }
 
-  private void addDataChange(Iterable<DataSnapshot> dataChanges) {
-    System.out.println(dataChanges);
-    for(DataSnapshot dataSnapshot : dataChanges) {
-      Event event = dataSnapshot.getValue(Event.class);
-      Log.e(TAG, "EVENTT: "  +  event.toString());
-      Log.e(TAG, dataSnapshot.child("user").getValue().toString());
-      Iterable<DataSnapshot> users = dataSnapshot.child("user").getChildren();
-      for(DataSnapshot user: users){
-        Log.e(TAG, user.getValue().toString());
-//        User u = user.getValue(User.class);
-//        Log.e(TAG,"USER: " +  u.toString());
-      }
-      events.add(event);
-    }
-
-    Log.e(TAG, "test: ");
-    events.stream().forEach( e-> Log.e(TAG, e.toString()));
-  }
 
   private void initLayout() {
     viewPager = findViewById(R.id.viewpager);

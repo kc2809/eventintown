@@ -17,12 +17,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
 
     public TextView eventTitle;
     public TextView eventPlace;
+    public TextView eventTime;
     public ImageView eventBackground;
     public MyViewHolder(View v) {
       super(v);
       eventTitle = v.findViewById(R.id.event_title);
       eventPlace = v.findViewById(R.id.event_place);
       eventBackground = v.findViewById(R.id.event_background);
+      eventTime = v.findViewById(R.id.time);
     }
   }
 
@@ -45,7 +47,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
     // - get element from your dataset at this position
     // - replace the contents of the view with that element
     holder.eventTitle.setText(events.get(position).getEvent_name());
-    holder.eventPlace.setText(events.get(position).getImage());
+    holder.eventPlace.setText(events.get(position).getLocation());
+    holder.eventTime.setText(events.get(position).getStart_time());
 
     // set background
     holder.eventBackground.setBackgroundResource(R.drawable.bg);
