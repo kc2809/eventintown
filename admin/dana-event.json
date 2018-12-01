@@ -1,0 +1,88 @@
+{
+  "user": [
+    {
+      "user_id": 1,
+      "name": "Hong Quy",
+      "role": "user",
+      "email": "lethihongquy24@gmail.com",
+      "password": "hongquy24"
+    },
+    {
+      "user_id": 2,
+      "name": "Bich Ngoc",
+      "role": "user",
+      "email": "bichngoc@gmail.com",
+      "password": "bichngoc24"
+    },
+    {
+      "user_id": 3,
+      "name": "Din Din",
+      "role": "user",
+      "email": "dindin@gmail.com",
+      "password": "dindin24"
+    },
+    {
+      "user_id": 3,
+      "name": "admin",
+      "role": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin"
+    }
+  ],
+  "event": [
+    {
+      "event_id": 1,
+      "event_name": "Iron man",
+      "attending_count": 10,
+      "category_id": 1,
+      "description": "",
+      "start_time": "2018/12/14 06:00:00",
+      "end_time": "2018/12/14 21:00:00",
+      "cost": 50000,
+      "geo_point": [0,0],
+      "user": [
+        {
+          "user_id": 1,
+          "status": "attending"
+        },
+        {
+          "user_id": 2,
+          "status": "attending"
+        }
+      ],
+      "comment": [
+        {
+          "user_id": 1,
+          "comment": "Event nay se rat thu vi"
+        }
+      ]
+    }
+  ],
+  "category": [
+    {
+      "category_id": 1,
+      "category_name": "sport"
+    },
+    {
+      "category_id": 2,
+      "category_name": "culture"
+    },
+    {
+      "category_id": 3,
+      "category_name": "culinary"
+    },
+    {
+      "category_id": 4,
+      "category_name": "entertainment"
+    }
+  ],
+  "payment": [
+    {
+      "payment_id": 1,
+      "user_id": 1,
+      "event_id": 1,
+      "cost": 100000,
+      "time": "2018/12/01 18:00:00"
+    }
+  ]
+}
