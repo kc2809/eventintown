@@ -14,11 +14,14 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kcadventure.danangevents.R;
+import com.kcadventure.danangevents.models.Event;
+import java.util.List;
 
 public class MapViewFragment extends Fragment {
 
   MapView mMapView;
   private GoogleMap googleMap;
+  private List<Event> events;
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -9,10 +9,72 @@
   tools:context=".activities.ScrollingDetailActivity"
   tools:showIn="@layout/activity_scrolling_detail">
 
-  <TextView
-    android:layout_width="wrap_content"
+  <LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/text_margin"
-    android:text="@string/large_text"/>
+    android:orientation="vertical">
+
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dp"
+      android:text="Google Dev"
+      android:textColor="@color/color_black"
+      android:textSize="30dp"/>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:orientation="horizontal">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="location aslkfjdskljfkldsajkfljdsf"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        />
+
+      <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ico_map"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:orientation="horizontal">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="location aslkfjdskljfkldsajkfljdsf"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        />
+
+      <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ico_map"/>
+
+    </LinearLayout>
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:text="DescriptioDescriptionsafsdfasfsfDescriptionsafsdfasfsfDescriptionsafsdfasfsfDescriptionsafsdfasfsfDescriptionsafsdfasfsfDescriptionsafsdfasfsfDescriptionsafsdfasfsfDescriptionsafsdfasfsfDescriptionsafsdfasfsf
+      nsafsdfasfsf"
+      android:textSize="10dp"/>
+  </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
