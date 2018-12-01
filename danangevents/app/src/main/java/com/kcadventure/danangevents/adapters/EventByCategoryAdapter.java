@@ -49,7 +49,7 @@ public class EventByCategoryAdapter extends
       holder.category.setText(categories.get(position).getCategory_name());
 
       // set background
-      holder.recyclerView.setAdapter(new EventAdapter(filteredEvent));
+      holder.recyclerView.setAdapter(new EventAdapter(filteredEvent, context));
       holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
     } else {
       holder.recyclerView.setVisibility(View.GONE);

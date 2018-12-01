@@ -1,8 +1,9 @@
 package com.kcadventure.danangevents.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Event {
+public class Event implements Serializable {
 
     private int event_id;
     private String event_name;

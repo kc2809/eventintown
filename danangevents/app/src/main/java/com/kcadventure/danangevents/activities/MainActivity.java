@@ -1,29 +1,21 @@
 package com.kcadventure.danangevents.activities;
 
-import android.support.annotation.NonNull;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.kcadventure.danangevents.R;
 import com.kcadventure.danangevents.adapters.TabAdapter;
 import com.kcadventure.danangevents.fragments.EventInTownFragment;
 import com.kcadventure.danangevents.fragments.MapViewFragment;
-import com.kcadventure.danangevents.models.Event;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -87,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
           public boolean onQueryTextChange(String newText) {
 //            search(newText);
             Log.e(TAG, newText);
+
             return true;
           }
         });
