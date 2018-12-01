@@ -6,7 +6,7 @@
   <string name="event_title">Google Devfest 2018</string>
   <string name="event_place">2 Quang Trung</string>
   <string name="event_background_description">event background</string>
-  <string name="title_activity_scrolling_detail">ScrollingDetailActivity</string>
+  <string name="title_activity_scrolling_detail"></string>
   <string name="large_text">
     "Material is the metaphor.\n\n"
 

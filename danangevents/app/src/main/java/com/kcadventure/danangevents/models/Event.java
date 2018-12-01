@@ -24,11 +24,6 @@ public class Event implements Serializable {
 
     }
 
-    public Event(int event_id, String event_name) {
-        this.event_id = event_id;
-        this.event_name = event_name;
-    }
-
     public Event(int event_id, String event_name, int attending_count, int category_id,
         String description, String start_time, String end_time, double cost, double lat, double lon,
         String image) {

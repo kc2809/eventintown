@@ -1,5 +1,9 @@
 package com.kcadventure.danangevents.activities;
 
+import static com.kcadventure.danangevents.util.Constants.EVENT_DATA;
+
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -10,15 +14,30 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kcadventure.danangevents.R;
+import com.kcadventure.danangevents.models.Event;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
   private GoogleMap mMap;
+  Event event;
+
+  public static Intent getMapsActivityIntent(Context context, Event event){
+    Intent intent = new Intent(context, MapsActivity.class);
+    intent.putExtra(EVENT_DATA, event);
+    return intent;
+  }
+
+  private void getData() {
+    Intent intent = getIntent();
+    event = (Event) intent.getSerializableExtra(EVENT_DATA);
+    System.out.println(event);
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_maps);
+    getData();
     // Obtain the SupportMapFragment and get notified when the map is ready to be used.
     SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                                                               .findFragmentById(R.id.map);
@@ -39,11 +58,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     mMap = googleMap;
 
     // Add a marker in Sydney and move the camera
-    LatLng sydney = new LatLng(16.061556, 108.182418);
-    LatLng choThanhKhe = new LatLng(16.058662, 108.185249);
-    mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-    mMap.addMarker(new MarkerOptions().position(choThanhKhe).title("cho thanh khe"));
-    mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    LatLng choThanhKhe = new LatLng(event.getLat(), event.getLon());
+    mMap.addMarker(new MarkerOptions().position(choThanhKhe).title(event.getEvent_name()));
+    mMap.moveCamera(CameraUpdateFactory.newLatLng(choThanhKhe));
     mMap.animateCamera( CameraUpdateFactory.zoomTo( 17.0f ) );
 
   }

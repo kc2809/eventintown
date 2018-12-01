@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +39,7 @@ public class EventInTownFragment extends Fragment {
     View view = inflater.inflate(R.layout.event_in_town_fragment, container, false);
     initDb();
     recyclerView = view.findViewById(R.id.recyclerView);
-    mAdapter = new EventByCategoryAdapter(events, categories, getContext());
+    mAdapter = new EventByCategoryAdapter(events, categories, getContext(), Glide.with(this));
     recyclerView.setAdapter(mAdapter);
     recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -71,6 +72,7 @@ public class EventInTownFragment extends Fragment {
     }
     Log.e("SIZE event", events.size()+"");
     mAdapter.notifyDataSetChanged();
+    events.stream().forEach( e -> Log.e(TAG, e.toString()));
   }
 
   private void addCategory(Iterable<DataSnapshot> dataChanges) {

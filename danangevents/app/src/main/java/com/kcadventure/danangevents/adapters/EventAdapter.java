@@ -1,14 +1,20 @@
 package com.kcadventure.danangevents.adapters;
 
+import static android.support.constraint.Constraints.TAG;
+import static com.bumptech.glide.request.RequestOptions.fitCenterTransform;
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Priority;
+import com.bumptech.glide.RequestManager;
 import com.kcadventure.danangevents.R;
 import com.kcadventure.danangevents.activities.ScrollingDetailActivity;
 import com.kcadventure.danangevents.models.Event;
@@ -17,6 +23,7 @@ import java.util.List;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder> {
   private List<Event> events;
   private Context context;
+  RequestManager glideManager;
 
   public class MyViewHolder extends RecyclerView.ViewHolder implements OnClickListener {
 
@@ -46,9 +53,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
     return events;
   }
 
-  public EventAdapter(List<Event> events, Context context) {
+  public EventAdapter(List<Event> events, Context context, RequestManager glideManager) {
     this.events = events;
     this.context = context;
+    this.glideManager = glideManager;
   }
 
   @Override
@@ -70,9 +78,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
     holder.eventTime.setText(events.get(position).getStart_time());
 
     // set background
-    holder.eventBackground.setBackgroundResource(R.drawable.bg);
-
-
+//    holder.eventBackground.setBackgroundResource(R.drawable.bg);
+//    Log.e(TAG, events.get(position).getImage());
+    glideManager
+        .load(events.get(position).getImage())
+        .apply(fitCenterTransform()
+                   .priority(Priority.HIGH))
+        .into(holder.eventBackground);
   }
 
   // Return the size of your dataset (invoked by the layout manager)
