@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "219297288084",
+    "firebase_url": "https://dana-event.firebaseio.com",
+    "project_id": "dana-event",
+    "storage_bucket": "dana-event.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219297288084:android:6fb1f313ecff91c4",
+        "android_client_info": {
+          "package_name": "com.bof.devfest18.danaevent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219297288084-vq790uhuafl0faqkdl9ffph7hn2n73br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBezHt8uNDjwg2s8o1q_kavFIDIiXw0lc4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
