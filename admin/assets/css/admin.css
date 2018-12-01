@@ -1,0 +1,369 @@
+#user-list .badge{
+    text-transform: capitalize;
+}
+.text-red{
+   color: red;
+}
+.right_col .breadcrumb{
+   padding-left: 0;
+}
+.title-modal {
+   padding: 10px;
+   text-align: center;
+}
+.callout-success {
+   text-align: center;
+   color: #449d44;
+   font-weight: 600;
+}
+.well{
+   margin-bottom: 0!important;
+}
+.list-unstyled i{
+   margin-right: 5px;
+}
+table tbody td{
+   word-break: break-word;
+}
+.block_content{
+   width: 100%;
+   word-break: break-word;
+}
+
+.timeline .block {
+   padding: 30px 15px;
+}
+
+.editor-wrapper {
+   overflow: scroll;
+   max-height: 300px
+}
+
+label.error {
+    color: rgba(255, 0, 0, 0.9);
+}
+
+.hovereffect {
+   width: 250px;
+   height: 250px;
+   float: left;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   cursor: default;
+   background-image: url(../img/avatar.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   margin: 10px 0;
+   background-size: cover;
+}
+
+.hovereffect .overlay {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   overflow: hidden;
+   left: 0;
+   opacity: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+   -webkit-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;
+}
+
+.hovereffect:hover .overlay {
+   opacity: 1;
+   filter: alpha(opacity=100);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.hovereffect:hover h2, .hovereffect:hover a.info {
+   opacity: 1;
+   filter: alpha(opacity=100);
+   -ms-transform: translatey(0);
+   -webkit-transform: translatey(0);
+   transform: translatey(0);
+}
+.hovereffect:hover a.info {
+   -webkit-transition-delay: .2s;
+   transition-delay: .2s;
+}
+
+.hovereffect a.info:first-child {
+   font-size: 20px;
+}
+
+.hovereffect a.info {
+   text-decoration: none;
+   display: block;
+   color: #fff;
+   background-color: transparent;
+   opacity: 0;
+   filter: alpha(opacity=0);
+   -webkit-transition: all .2s ease-in-out;
+   transition: all .2s ease-in-out;
+}
+.badge.label-success{
+   background-color: #5cb85c;
+}
+.badge.label-danger{
+   /*background-color: #d9534f;*/
+}
+.badge.label-primary{
+   background-color: #337ab7;
+}
+.rating-star--thumb{
+   clear: both;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+   font-size: 20px;
+   z-index: -1;
+}
+.rating-star--thumb .fa-star-o,
+.rating-star--thumb .fa{
+   margin-right: 10px;
+}
+.rating-star--thumb .fa-star-o:last-child,
+.rating-star--thumb .fa:last-child{
+   margin-right: 0;
+}
+.adress-admininfo{
+   text-transform: capitalize;
+}
+.adress-admininfo::first-letter{
+   text-transform: capitalize;
+}
+.yellow {
+   color: #dd9600 !important;
+}
+.about-me, .my-services, .my-experience, .location-active, .transportation, .tour-guide, .my-language, .price-profile {
+   padding: 10px 30px;
+   color: #999;
+}
+.my-services {
+   display: table;
+   width: 100%;
+}
+.my-language {
+   padding-top: 0;
+}
+.border-profile-item {
+   display: table;
+   border-bottom: 1px solid #e0e0e0;
+   width: 100%;
+}
+color2 {
+   color: #646464;
+}
+.font-size1 {
+   font-size: 18px;
+   font-style: normal;
+}
+.title-aboutme {
+   font-weight: 600;
+   margin-bottom: 10px;
+}
+.title-aboutme-pad {
+   margin-top: 10px;
+}
+.content-aboutme {
+   /*color: #646464;*/
+   line-height: 24px;
+   margin-bottom: 10px;
+}
+.content-aboutme::first-letter{
+   text-transform: capitalize;
+}
+.progress.progress_sm{
+   margin-bottom: 2px;
+}
+.list-unstyled li{
+   margin-bottom: 10px;
+}
+/**
+booking guide
+ */
+.chat-cnt-edit-traveller {
+   margin-top: 20px;
+   margin-bottom: 25px;
+   display: table;
+   color: #666;
+   width: 100%;
+}
+.content-chat {
+   max-height: 1000px;
+   overflow-y: auto;
+   height: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+.trevaller_inbox {
+   background-color: #f5f5f5;
+   padding: 10px 30px;
+   margin-right: 100px;
+   border-radius: 2px;
+   margin-bottom: 20px;
+}
+.guide_inbox {
+   padding: 10px 30px;
+   border-radius: 2px;
+   background-color: #dcf8f6;
+   margin: 0px 0px 20px 50px;
+}
+.chat-cnt-edit-traveller time {
+   display: table;
+   width: 100%;
+   text-align: right;
+}
+.color10 {
+   color: #747474;
+}
+.font-size {
+   font-size: 16px;
+}
+.bg-1 {
+   display: table;
+   width: 100%;
+   padding: 0px;
+}
+.list_booking .table-striped > tbody > tr:nth-of-type(odd) {
+   background-color: #eaeaea !important;
+}
+.list_booking .table > tbody > tr > td {
+   border: 0px;
+}
+.fnt-weight {
+   font-weight: 600;
+}
+.date_time_total, .number_people_total, .expected_total {
+   padding: 10px 0px;
+}
+.cnt-body-list-booking tr td ul li {
+   width: 100%;
+   max-width: 33%;
+}
+.list_booking ul{
+   padding: 0;
+}
+.list_booking ul li {
+   float: left;
+   list-style: none;
+}
+/**
+end booking guide
+ */
+/**
+notify
+ */
+.navbar-nav .open .dropdown-menu.msg_list {
+   width: 350px;
+   max-height: 400px;
+   overflow-y: auto;
+}
+.sidebar-footer a{
+   float: right;
+   width: 100%;
+}
+.mark-as-read{
+   background-color: #fcf8e3!important;
+}
+ul.msg_list li a .time{
+   position: initial;
+}
+/**
+end notify
+ */
+
+.x_content .content-profile-item span{
+    margin-left: 5px;
+}
+#role_name{
+   word-break: break-word;
+}
+.btn-danger i{
+    text-transform: capitalize;
+}
+.btn-danger{
+    text-transform: capitalize;
+}
+#user-list td::first-letter{
+   text-transform: none;
+}
+#user-list.servicelist td::first-letter{
+   text-transform: capitalize;
+}
+.item-services {
+    padding-left: 0;
+    /*padding-bottom: 20px;*/
+}
+.content-profile-item > .col-md-12{
+   padding-left: 0;
+}
+.my-language .thumb-myLanguage{
+   padding-left: 0;
+}
+#modal{
+   z-index: 1100!important;
+   background-color: rgba(0,0,0,0.5)!important;
+}
+#preview{
+   z-index: 1200!important;
+   background-color: rgba(0,0,0,0.5)!important;
+}
+#preview .buttons{
+   cursor: pointer;
+}
+#preview .jcrop-holder{
+   pointer-events: none!important;
+}
+#preview .jcrop-holder>div{
+   pointer-events: all!important;
+}
+#preview .jcrop-holder>div.jcrop-tracker{
+   pointer-events: none!important;
+}
+
+.event-none{
+    pointer-events: none;
+}
+.event-all{
+    pointer-events: all;
+}
+.text-justify{
+    text-align: justify;
+}
+.close-editservice{
+   opacity: 0.5;
+   margin-right: 0;
+}
+.close-editservice:hover, .close-editservice:focus{
+   opacity: 1;
+}
+.error .messi-closebtn::before{
+   top: 0;
+   left: -0.5px;
+}
+#user-list td.new-author::first-letter{
+   text-transform: capitalize;
+}
+#user-list td.new-author{
+   text-transform: capitalize;
+}
+.filter-history{
+   float: right;
+   display: inline-block;
+   text-align: center;
+   margin-bottom: 5px;
+}
+#filter-history{
+   height: 32px;
+   line-height: 32px;
+   cursor: pointer;
+}
+.lang-serv span{
+   float: left;
+   margin-left: 0!important;
+}
