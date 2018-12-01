@@ -66,8 +66,7 @@
 			left: 0;
 		}
 		table.table-bordered th:last-child{
-			text-align: center;
-		}
+			text-align: center		}
 		button#create-new {left: 120px;}
 		.dataTables_info {display: none;}
 		.group-view, .group-edit, .group-delete,.can_toggle {cursor: pointer;}
@@ -229,9 +228,8 @@
 				    <!-- Category -->
 					<div class="form-group">
 					  	<label for="formGroupExampleInput">Category</label>
-					  	<select id="category" class="selectpicker">
-						    <option value="1"> 1 </option>
-						    <option value="2"> 2 </option>						    
+					  	<select id="category" class="selectpicker">						    
+						    <!--  -->
 					  </select>					 					 
 					</div>
 
@@ -269,7 +267,19 @@
 				    <div class="form-group">
 				        <label for="formGroupExampleInput2">Location</label>
 				        <input type="text" class="form-control" id="location" placeholder="Location">
-			    	</div>			   
+			    	</div>		
+
+			    	<!-- Location -->
+				    <div class="form-group">
+				        <label for="formGroupExampleInput2">Lat</label>
+				        <input type="text" class="form-control" id="lat" placeholder="lat">
+			    	</div>
+
+			    	<!-- Location -->
+				    <div class="form-group">
+				        <label for="formGroupExampleInput2">Lon</label>
+				        <input type="text" class="form-control" id="lon" placeholder="lon">
+			    	</div>	   
 
 		    	<button type="button" id="btnSubmit" class="btn btn-primary">Create Event</button>
 			</form>

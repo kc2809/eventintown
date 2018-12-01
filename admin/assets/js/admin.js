@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var uniqueId;
+
     const config = {
         apiKey: "AIzaSyD4anhA5e7OK-ytLJbMjyXnudTsqRtGeHE",
         authDomain: "dana-event.firebaseapp.com",
@@ -22,8 +22,7 @@ $(document).ready(function () {
             html += body_tab(element);
         });
         $( "#tbody" ).empty();
-        $("#tbody").append(html);
-        uniqueId = snap.numChildren();
+        $("#tbody").append(html);        
     });
 
     const body_tab = (data) => {

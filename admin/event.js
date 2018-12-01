@@ -12,6 +12,15 @@ $(document).ready(function () {
     firebase.initializeApp(config);
     var database = firebase.database();    
     const eventRefObject = database.ref().child("event");  
+    const categoryRefObject = database.ref().child("category");    
+
+    categoryRefObject.on("value", snap => {
+        console.log(snap.val());        
+        const data = snap.val();
+        data.forEach(function(e) {
+            $('#category').append('<option value=' + e.category_id + '>' + e.category_name + '</option>')
+        });
+    });
 
     eventRefObject.on("value", snap => {
         uniqueId = snap.numChildren();
@@ -22,29 +31,25 @@ $(document).ready(function () {
         console.log(data);        
     });
 
-    function insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, startTime, user) {
+    function insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, lat, lon, startTime, user) {
         database.ref('event/' + eventId).set({
             attending_count : attendingCount,
             category_id : categoryId,
-            comment : comment, 
-            cost : cost, 
+            comment : comment,
+            cost : cost,
             description : description,
-            end_time : endTime,             
+            end_time : endTime,
             event_id : eventId,
             event_name : eventName,
             // image : image, 
-            // lat : lat, 
+            lat : lat, 
             location : location, 
-            // lon : lon,
+            lon : lon,
             start_time : startTime,
             user : user,                 
         });
         window.location.href = "event.html";
     }
-
-
-
-
 
     $("#btnSubmit").click(function () {
         const eventId = uniqueId + 1;
@@ -67,8 +72,10 @@ $(document).ready(function () {
         ];
         const location = $("#location").val();
         const startTime = $("#startTime").val();
+        const lat = $("#lat").val();
+        const lon = $("#lon").val();
 
-        insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, startTime, user);
+        insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, lat, lon, startTime, user);
     });
 });
 
