@@ -39,7 +39,9 @@
       "start_time": "2018/12/14 06:00:00",
       "end_time": "2018/12/14 21:00:00",
       "cost": 50000,
-      "geo_point": [0,0],
+      "location": "Da Nang",
+      "lat": 0.634,
+      "lon": 0.634,
       "user": [
         {
           "user_id": 1,
