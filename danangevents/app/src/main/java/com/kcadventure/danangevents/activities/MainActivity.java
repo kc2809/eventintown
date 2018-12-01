@@ -1,5 +1,6 @@
 package com.kcadventure.danangevents.activities;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
@@ -12,6 +13,13 @@ import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.kcadventure.danangevents.R;
 import com.kcadventure.danangevents.adapters.TabAdapter;
 import com.kcadventure.danangevents.fragments.EventInTownFragment;
@@ -26,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
   private TabLayout tabLayout;
   private ViewPager viewPager;
   private TabAdapter tabAdapter;
+  private DatabaseReference mDatabase;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +42,20 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
     setContentView(R.layout.activity_main);
     setupToolbar();
     initLayout();
+
+    // Overview get data from firebase
+    mDatabase = FirebaseDatabase.getInstance().getReference();
+    mDatabase.addValueEventListener(new ValueEventListener() {
+      @Override
+      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        Log.d("DEmo", dataSnapshot.getValue().toString());
+      }
+
+      @Override
+      public void onCancelled(@NonNull DatabaseError databaseError) {
+
+      }
+    });
   }
 
   private void initLayout() {
