@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.kcadventure.danangevents.R;
 import com.kcadventure.danangevents.adapters.TabAdapter;
 import com.kcadventure.danangevents.fragments.EventInTownFragment;
+import com.kcadventure.danangevents.fragments.MapViewFragment;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -68,7 +69,9 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
     List<Fragment> tabs = new ArrayList<>();
     tabs.add(new EventInTownFragment());
     tabs.add(new EventInTownFragment());
-    tabs.add(new EventInTownFragment());
+    tabs.add(new MapViewFragment());
+
+//    tabs.add(new EventInTownFragment());
     tabAdapter = new TabAdapter(getSupportFragmentManager(), tabs, Arrays.asList("Event in Town", "My Event", "Map"));
     viewPager.setAdapter(tabAdapter);
     tabLayout.setupWithViewPager(viewPager);
