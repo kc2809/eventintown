@@ -44,8 +44,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
   public void onBindViewHolder(MyViewHolder holder, int position) {
     // - get element from your dataset at this position
     // - replace the contents of the view with that element
-    holder.eventTitle.setText(events.get(position).getTitle());
-    holder.eventPlace.setText(events.get(position).getPlace());
+    holder.eventTitle.setText(events.get(position).getEvent_name());
+    holder.eventPlace.setText(events.get(position).getImage());
 
     // set background
     holder.eventBackground.setBackgroundResource(R.drawable.bg);

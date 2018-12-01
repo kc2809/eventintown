@@ -1,68 +1,161 @@
 package com.kcadventure.danangevents.models;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class Event {
-
-    private String id;
-    private String title;
-    private String place;
-    private String background;
 
     private int event_id;
     private String event_name;
     private int attending_count;
     private int category_id;
     private String description;
-    private LocalDateTime start_time;
-    private LocalDateTime end_time;
+    private String start_time;
+    private String end_time;
     private double cost;
-    private int[] geo_point = new int[2];
+    private double lat;
+    private double lon;
     private List<User_Event> users;
     private List<Comment> comments;
-
+    private String image;
 
     public Event() {
 
     }
 
-    public Event(String id, String title, String place, String background) {
-        this.id = id;
-        this.title = title;
-        this.place = place;
-        this.background = background;
+    public Event(int event_id, String event_name, int attending_count, int category_id,
+        String description, String start_time, String end_time, double cost, double lat, double lon,
+        String image) {
+        this.event_id = event_id;
+        this.event_name = event_name;
+        this.attending_count = attending_count;
+        this.category_id = category_id;
+        this.description = description;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.cost = cost;
+        this.lat = lat;
+        this.lon = lon;
+        this.image = image;
     }
 
-    public String getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "Event{" +
+                   "event_id=" + event_id +
+                   ", event_name='" + event_name + '\'' +
+                   ", attending_count=" + attending_count +
+                   ", category_id=" + category_id +
+                   ", description='" + description + '\'' +
+                   ", start_time='" + start_time + '\'' +
+                   ", end_time='" + end_time + '\'' +
+                   ", cost=" + cost +
+                   ", lat=" + lat +
+                   ", lon=" + lon +
+                   ", image='" + image + '\'' +
+                   '}';
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public double getLat() {
+        return lat;
     }
 
-    public String getTitle() {
-        return title;
+    public void setLat(double lat) {
+        this.lat = lat;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public double getLon() {
+        return lon;
     }
 
-    public String getPlace() {
-        return place;
+    public void setLon(double lon) {
+        this.lon = lon;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
+    public int getEvent_id() {
+        return event_id;
     }
 
-    public String getBackground() {
-        return background;
+    public void setEvent_id(int event_id) {
+        this.event_id = event_id;
     }
 
-    public void setBackground(String background) {
-        this.background = background;
+    public String getEvent_name() {
+        return event_name;
+    }
+
+    public void setEvent_name(String event_name) {
+        this.event_name = event_name;
+    }
+
+    public int getAttending_count() {
+        return attending_count;
+    }
+
+    public void setAttending_count(int attending_count) {
+        this.attending_count = attending_count;
+    }
+
+    public int getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getStart_time() {
+        return start_time;
+    }
+
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public String getEnd_time() {
+        return end_time;
+    }
+
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    public List<User_Event> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User_Event> users) {
+        this.users = users;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

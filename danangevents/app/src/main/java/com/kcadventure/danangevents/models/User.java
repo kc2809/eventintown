@@ -1,5 +1,9 @@
 package com.kcadventure.danangevents.models;
 
+import com.google.firebase.database.Exclude;
+import java.util.HashMap;
+import java.util.Map;
+
 public class User {
 
     private int user_id;
@@ -18,6 +22,29 @@ public class User {
         this.role = role;
         this.email = email;
         this.password = password;
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("user_id", user_id);
+        result.put("name", name);
+        result.put("role", role);
+        result.put("email", email);
+        result.put("password", password);
+
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                   "user_id=" + user_id +
+                   ", name='" + name + '\'' +
+                   ", role='" + role + '\'' +
+                   ", email='" + email + '\'' +
+                   ", password='" + password + '\'' +
+                   '}';
     }
 
     public int getUser_id() {
