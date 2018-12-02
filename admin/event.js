@@ -41,7 +41,7 @@ $(document).ready(function () {
             end_time : endTime,
             event_id : eventId,
             event_name : eventName,
-            // image : image, 
+            image : "https://firebasestorage.googleapis.com/v0/b/dana-event.appspot.com/o/1.jpg?alt=media&token=0da61a40-9627-4eae-b120-3ab7e1ebe744", 
             lat : lat, 
             location : location, 
             lon : lon,
@@ -72,8 +72,8 @@ $(document).ready(function () {
         ];
         const location = $("#location").val();
         const startTime = $("#startTime").val();
-        const lat = $("#lat").val();
-        const lon = $("#lon").val();
+        const lat = parseFloat($("#lat").val());
+        const lon = parseFloat($("#lon").val());
 
         insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, lat, lon, startTime, user);
     });

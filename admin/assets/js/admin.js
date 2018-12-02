@@ -28,7 +28,7 @@ $(document).ready(function () {
     const body_tab = (data) => {
         return '<tr role="row" class="odd">\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td class="sorting_1">'+data.event_id+'</td>\n' +
-            '\t\t\t\t\t\t\t\t\t\t\t\t\t<td><img src="./assets/img/user.png" class="avatar" alt="Avatar">\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t<td><img style="width:100px; height: 100px;" src=' + data.image + 'class=avatar alt=Avatar>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t</td>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.event_name+'</td>\n' +
             '\t\t\t\t\t\t\t\t\t\t\t\t\t<td>'+data.location+'</td>\n' +
