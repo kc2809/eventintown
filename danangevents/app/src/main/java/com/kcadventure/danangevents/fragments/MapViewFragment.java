@@ -39,6 +39,7 @@ public class MapViewFragment extends Fragment {
       @Override
       public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 //        Log.e(TAG, dataSnapshot.child("event").);
+        events.clear();
 
         addDataChange(dataSnapshot.child("event").getChildren());
       }

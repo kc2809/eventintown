@@ -92,7 +92,8 @@ public class EventInTownFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 //        Log.e(TAG, dataSnapshot.child("event").);
-
+              events.clear();
+              categories.clear();
                 addDataChange(dataSnapshot.child("event").getChildren());
                 addCategory(dataSnapshot.child("category").getChildren());
 //        addDataChange(dataSnapshot.getChildren());
