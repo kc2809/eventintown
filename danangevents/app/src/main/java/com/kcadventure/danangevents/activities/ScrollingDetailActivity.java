@@ -4,31 +4,27 @@ import static com.kcadventure.danangevents.util.Constants.EVENT_DATA;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.kcadventure.danangevents.R;
 import com.kcadventure.danangevents.models.Event;
-import java.io.File;
 
 public class ScrollingDetailActivity extends AppCompatActivity {
 
@@ -71,15 +67,14 @@ public class ScrollingDetailActivity extends AppCompatActivity {
   }
 
   private void sendEmail(){
-    Intent emailIntent = new Intent(Intent.ACTION_SEND);
-    emailIntent.setType("text/plain");
-    emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"huukhanh0928@gmail.com"});
-    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Event in Town");
-    emailIntent.putExtra(Intent.EXTRA_TEXT, "here your QR code");File dir = new File(Environment.getExternalStorageDirectory() + File.separator + "drawable");
-    String path = Environment.getExternalStorageDirectory()+ "/qr.jpg";
+    Intent send = new Intent(Intent.ACTION_SENDTO);
+    String uriText = "mailto:" + Uri.encode("zhuukhanhz@gmail.com") +
+                         "?subject=" + Uri.encode("Event in town") +
+                         "&body=" + Uri.encode("Your payment is successfully");
+    Uri uri = Uri.parse(uriText);
 
-    Toast.makeText(this, "SEND EMAIL SUCCESSFULLY", Toast.LENGTH_LONG);
-    startActivity(Intent.createChooser(emailIntent, "Pick an Email provider"));
+    send.setData(uri);
+    startActivity(Intent.createChooser(send, "Send mail..."));
   }
 
   private void initView() {
@@ -134,7 +129,6 @@ public class ScrollingDetailActivity extends AppCompatActivity {
       (new Handler()).postDelayed(new Runnable() {
         @Override
         public void run() {
-          Log.e("aaa", "afsadf");
           imageView.setVisibility(View.VISIBLE);
         }
       }, 300);
