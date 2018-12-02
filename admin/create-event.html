@@ -106,8 +106,8 @@
 		<div class="col-md-3 left_col">
 			<div class="left_col scroll-view">
 				<div class="navbar nav_title" style="border: 0;">
-					<a href="https://www.lifgoo.com/en/admin" class="site_title"><i class="fa fa-paw"></i>
-						<span>Lifgoo Admin</span></a>
+					<a href="#" class="site_title"><i class="fa fa-paw"></i>
+						<span>Event Admin</span></a>
 				</div>
 
 				<div class="clearfix"></div>
@@ -164,12 +164,12 @@
 
 					<ul class="nav navbar-nav navbar-right">
 						<li class="">
-							<a href="https://www.lifgoo.com/en/admin/logout"><i class="fa fa-sign-out pull-right" style="margin-top: 7px;"></i> Log Out</a>
+							<a href="#"><i class="fa fa-sign-out pull-right" style="margin-top: 7px;"></i> Log Out</a>
 
 						</li>
 
 						<li role="presentation" class="dropdown">
-							<a href="javascript:" class="dropdown-toggle info-number  notification-bell" data-toggle="dropdown" aria-expanded="false" data-url="https://www.lifgoo.com/en/admin/updateIsClick">
+							<a href="javascript:" class="dropdown-toggle info-number  notification-bell" data-toggle="dropdown" aria-expanded="false" data-url="#">
 								<i class="fa fa-bell-o"></i>
 								<span class="badge bg-red"></span>
 							</a>
@@ -177,11 +177,7 @@
 								<li class="mark-as-read" data-url="https://www.lifgoo.com/en/admin/markRead" data-noid="4">
 									<a href="https://www.lifgoo.com/en/admin/guide/approval">
                                     <span class="image">
-<<<<<<< Updated upstream
-                                        <!-- <img src="./event_files/user(1).png" alt="Profile Image"> -->
-=======
                                         <img src="./assets/img/user.png" alt="Profile Image">
->>>>>>> Stashed changes
                                     </span>
 										<span class="message">sontrieu recently registered the account. Please review it</span>
 										<span class="time">2018-03-27 02:43:03</span>
@@ -189,15 +185,11 @@
 								</li>                                                            
 								<li class="mark-as-read" data-url="https://www.lifgoo.com/en/admin/markRead" data-noid="3">
 									<a href="https://www.lifgoo.com/en/admin/guide/approval">
-<<<<<<< Updated upstream
 	                                    <span class="image">
-                                        	<!-- <img src="./event_files/user(1).png" alt="Profile Image"> -->
                                     	</span>
-=======
 										<span class="image">
 											<img src="./assets/img/user.png" alt="Profile Image">
 										</span>
->>>>>>> Stashed changes
 										<span class="message">phuongtran recently registered the account. Please review it</span>
 										<span class="time">2018-03-27 02:33:44</span>
 									</a>
@@ -228,12 +220,12 @@
 					<!-- Input -->
 				    <div class="form-group">
 				        <label for="formGroupExampleInput">Event Name</label>
-				        <input type="text" class="form-control" id="eventName" placeholder="Event Name">
+				        <input type="text" class="form-control" id="eventName" placeholder="Event Name" value="Devfest 2018">
 				    </div>
 				    <!-- Attending Count -->
 				    <div class="form-group">
 				        <label for="formGroupExampleInput2">Attending Count</label>
-				        <input type="text" class="form-control" id="attendingCount" placeholder="Attending Count">
+				        <input type="text" class="form-control" id="attendingCount" value="100" placeholder="Attending Count">
 			    	</div>
 				    <!-- Category -->
 					<div class="form-group">
@@ -246,7 +238,7 @@
 				   <!-- Start Time  -->
 				    <div class="form-group">
 					    <label class="label-control">Start time</label>
-					    <input id="startTime" width="276" />
+					    <input id="startTime" width="276" value="07:30 11/05/2018"/>
 					    <script>
 					        $('#startTime').datetimepicker();
 					    </script>
@@ -255,7 +247,7 @@
 					<!-- End Time  -->
 				    <div class="form-group">
 					    <label class="label-control">End time</label>
-					    <input id="endTime" width="276" />
+					    <input id="endTime" width="276" value="18:00 12/05/2018"/>
 					    <script>
 					        $('#endTime').datetimepicker();
 					    </script>
@@ -264,31 +256,31 @@
 				    <!-- Cost -->
 				    <div class="form-group">
 				        <label for="formGroupExampleInput2">Cost</label>
-				        <input type="text" class="form-control" id="cost" placeholder="Cost">
+				        <input type="text" class="form-control" id="cost" placeholder="Cost" value="500">
 			    	</div>				   
 
 				    <!-- Description -->
 				    <div class="form-group">
 				        <label for="formGroupExampleInput2">Description</label>
-				        <input type="text" class="form-control" id="description" placeholder="Description">
+				        <input type="text" class="form-control" id="description" placeholder="Description" value="The devfest mien trung">
 			    	</div>		
 
 			    	<!-- Location -->
 				    <div class="form-group">
 				        <label for="formGroupExampleInput2">Location</label>
-				        <input type="text" class="form-control" id="location" placeholder="Location">
+				        <input type="text" class="form-control" id="location" placeholder="Location" value="Da Nang">
 			    	</div>		
 
 			    	<!-- Location -->
 				    <div class="form-group">
 				        <label for="formGroupExampleInput2">Lat</label>
-				        <input type="text" class="form-control" id="lat" placeholder="lat">
+				        <input type="text" class="form-control" id="lat" placeholder="lat" value="16.062796">
 			    	</div>
 
 			    	<!-- Location -->
 				    <div class="form-group">
 				        <label for="formGroupExampleInput2">Lon</label>
-				        <input type="text" class="form-control" id="lon" placeholder="lon">
+				        <input type="text" class="form-control" id="lon" placeholder="lon" value="108.245874">
 			    	</div>	   
 
 		    	<button type="button" id="btnSubmit" class="btn btn-primary">Create Event</button>
@@ -306,7 +298,7 @@
 		</div>
 	</div>
 		<footer>
-			<div class="pull-right"><a href="https://lifgoo.com/">lifgoo</a>
+			<div class="pull-right"><a href="#">Event</a>
 			</div>
 			<div class="clearfix"></div>
 		</footer>

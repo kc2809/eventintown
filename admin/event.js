@@ -24,11 +24,6 @@ $(document).ready(function () {
 
     eventRefObject.on("value", snap => {
         uniqueId = snap.numChildren();
-        console.log(snap.val());
-    });    
-   
-    eventRefObject.on("child_changed", function(data) {
-        console.log(data);        
     });
 
     function insert_event(attendingCount, categoryId, comment, cost, description, endTime, eventId, eventName, location, lat, lon, startTime, user) {
