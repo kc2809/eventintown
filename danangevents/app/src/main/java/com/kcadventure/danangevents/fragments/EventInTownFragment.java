@@ -85,6 +85,8 @@ public class EventInTownFragment extends Fragment {
 
 
     private void initDb() {
+    events = new ArrayList<>();
+    categories = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
