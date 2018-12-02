@@ -33,6 +33,7 @@ public class MapViewFragment extends Fragment {
   private DatabaseReference mDatabase;
 
   private void initDb() {
+    events = new ArrayList<>();
     mDatabase = FirebaseDatabase.getInstance().getReference();
     mDatabase.addValueEventListener(new ValueEventListener() {
       @Override
